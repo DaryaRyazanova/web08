@@ -1,13 +1,10 @@
-import json
-
-from flask import Flask, request, render_template
-from flask import url_for
+from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/index/<title>')
-def news(title):
-    return render_template('index.html', title=title)
+@app.route('/training/<prof>')
+def index(prof):
+    return render_template('training.html', title=prof, prof=prof)
 
 
 if __name__ == '__main__':
